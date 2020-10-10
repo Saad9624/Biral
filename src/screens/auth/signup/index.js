@@ -21,16 +21,14 @@ import {
 import colors from '../../../constants/colors';
 
 
-class Login extends React.Component{
+class Signup extends React.Component{
 
 
     render(){
-        const { navigation} = this.props ;
-
         return(
             <View style={{flex:1}}>
                 <ScrollView>
-                <Header title="Login"/>
+                <Header title="Sign Up"/>
 
                 <View style={{marginVertical:20}}></View>
                 <TextInput
@@ -38,50 +36,33 @@ class Login extends React.Component{
                 placeholder="Username / Phone"/>
 
                 <TextInput
+                image={user}
+                placeholder="Enter Email"/>
+
+                <TextInput
                 image={password}
                 placeholder="Enter Password"/>
 
-                <Button
-                onPress={()=> navigation.navigate('Bottom Stack')}
-                 title="Login" />
+                <TextInput
+                image={password}
+                placeholder="Enter Confirm Password"/>
 
-                <TouchableOpacity
-                               onPress={() => navigation.navigate('Verification')}
+                <Button title="Signup" />
 
-                >
+                <TouchableOpacity>
                     <Text style={styles.text}>Forget Password?</Text>
                 </TouchableOpacity>
 
 
-                <View style={styles.bottomView}>
-                
-                     <View style={styles.socialView}>
-                          <Text style={styles.text}>Login with</Text>
-                        
-                        <View style={{flexDirection:'row',marginVertical:10}}>
-                              <Image style={styles.image} source={google}/>
-                              <Image style={styles.image} source={facebook}/>
-                        </View>
-                        
+                <Text style={[styles.text,{marginTop:40}]}>Already have an account? Sign In</Text>
 
-                    </View>
-               
-               <TouchableOpacity 
-               onPress={() => navigation.navigate('Signup')}
-               >
-                      <Text style={styles.text}>Don't have an account? Register</Text>
-
-               </TouchableOpacity>
-
-               
-                </View>
 
                 </ScrollView>
             </View>
         )
     }
 }
-export default Login ;
+export default Signup ;
 
 
 const styles = StyleSheet.create({
